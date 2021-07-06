@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Orders</h1>
+
+</body>
+</html>
+
+ <script>
+    let orders = [{
+        name: "Damilare",
+        item: "Milk",
+        qty: "4",
+        total: "$342",
+    },
+    {
+        name: "Chuks",
+        item: "Sugar",
+        qty: "4",
+        total: "$342"
+    },{
+        name: "Mr Protocoll",
+        item: "Milk",
+        qty: "4",
+        total: "$342"
+    },
+    {
+        name: "Daniella",
+        item: "Milk",
+        qty: "4",
+        total: "$342"
+    }]
+    
+    let inventory = [{
+            item: "Milk",
+            qty: "1",
+            Price: "$342",
+        },
+        {
+            item: "Milk",
+            qty: "1",
+            Price: "$342",
+        },{
+            item: "Milk",
+            qty: "1",
+            Price: "$342",
+        },
+    ]
+
+    let orderth = `
+        <th>S/N</th>
+        <th>Customer Name</th>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Total</th>`;
+    
+    let invth = `
+        <th>S/N</th>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>`;
+
+    function loadTable(thead,tbody){
+        return `<table border="1">
+            <thead id="thead"><tr>${thead}</tr></thead>
+            <tbody id="tbody">${tbody}</tbody>
+        </table>`
+    }
+
+    function tbody(ar){
+        var content = "";
+        for(x = 0; x < ar.length; x++){
+            content = content + `
+            <tr><td>${x + 1}</td>`
+            for(let y in ar[0])
+                content += `<td>${ar[x].y}</td>` 
+            content += `</tr>`;
+        }
+        return content;
+    }
+
+    document.write(loadTable(orderth,tbody(orders)));
+    document.write(loadTable(invth,tbody(inventory)));
+</script>
