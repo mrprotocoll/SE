@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Orders</h1>
+    <div class="table">
+        
+    </div>
+    
+    <button id="btn">View Item</button>
+    <button id="atm">Add New Inventory</button>
+    <button id="money">Add New Account</button>
+</body>
+
+</html>
+
+
+<script>
+    var table = document.getElementsByClassName("table");
+    var t = `
+        <table>
+            <tr>
+                <th>new</th>
+                <th>New</th>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>39</td>
+            </tr>
+        </table>
+    `;
+
+    var fm = `
+    
+    <form action="">
+        <input type="text" placeholder="Account Name"><br>
+        <input type="text" placeholder="Account Number"><br>
+        <input type="submit" value="Create Account">
+    </form>
+    `
+    var inv = `
+    <form action="">
+        <input type="text" placeholder=" Name"><br>
+        <input type="text" placeholder="Quantity"><br>
+        <input type="submit" value="Create Inventory">
+    </form>
+    `
+
+    function load(content,id){
+        document.getElementById(id).addEventListener("click",function(){
+            table[0].innerHTML = content;
+        })
+    }
+
+
+    load(t,"btn");
+    load(fm,"atm");
+    load(inv,"money");
+
+</script>
