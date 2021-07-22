@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div class="first" id="first">
+        <input type="text" id="output">
+        <div class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, ullam! Consectetur velit quibusdam obcaecati voluptatibus numquam repellat, harum delectus quod quia ex excepturi ipsa porro alias, culpa pariatur ut. Ea.</div>
+        <div class="inner">
+            <div class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, ullam! Consectetur velit quibusdam obcaecati voluptatibus numquam repellat, harum delectus quod quia ex excepturi ipsa porro alias, culpa pariatur ut. Ea.</div>
+        </div>
+        <div class="thir">
+            <ul>
+                <li class="li">Hello</li>
+                <li class="li">One</li>
+                <li id="two" class="li">
+                    <li>Two One</li>
+                    <li>Two 2</li>
+                </li>
+                <li class="li">Three</li>
+                <li class="li">Four</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+let list = document.querySelector(".first");
+let newList = document.createElement("div");
+let textInput = document.createElement("input");
+let output = document.querySelector("#output");
+let submit = document.createElement("input");
+newList.textContent = "New Text Content";
+list.appendChild(newList);
+list.appendChild(textInput);
+list.appendChild(submit);
+newList.className = "ndgd";
+newList.id = "newId";
+textInput.setAttribute("placeholder","Enter Your Name:");
+newList.setAttribute("placeholder","i am here");
+submit.setAttribute("type","submit");
+submit.setAttribute("value","Send");
+submit.id = "submit";
+textInput.id = "txt";
+newList.getAttribute("placeholder");
+let submitID = document.querySelector("#submit");
+submitID.addEventListener("click",function(e){
+    e.preventDefault()
+    let dv = document.createElement("div");
+    dv.innerText = textInput.value;
+    list.appendChild(dv);
+})
+
+console.log(list);
+
+//setTimeOut
+//setInterval
+</script>
+</html>
